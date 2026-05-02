@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import './task-item.css';
+
+:root {
+  --c-bg: #0d0d0f;
+  --c-surface: #141417;
+  --c-surface-raised: #1a1a1e;
+  --c-border: #2a2a30;
+  --c-border-subtle: #1f1f25;
+  --c-accent: #b8f45a;
+  --c-accent-dim: rgba(184, 244, 90, 0.12);
+  --c-accent-glow: rgba(184, 244, 90, 0.25);
+  --c-text-primary: #f0f0f0;
+  --c-text-secondary: #888896;
+  --c-text-muted: #4a4a58;
+  --c-danger: #ff5f5f;
+  --c-danger-dim: rgba(255, 95, 95, 0.1);
+
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --transition: 150ms ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--c-bg);
+  color: var(--c-text-primary);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--c-bg);
+}
+
+button {
+  font-family: var(--font-display);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: var(--font-display);
+  color: var(--c-text-primary);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--c-text-muted);
+}

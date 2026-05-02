@@ -1,0 +1,64 @@
+---
+---
+
+<div class="stats" id="stats-bar">
+  <div class="stat">
+    <span class="stat-value" id="stat-total">0</span>
+    <span class="stat-label">tasks</span>
+  </div>
+  <div class="divider"></div>
+  <div class="stat">
+    <span class="stat-value accent" id="stat-done">0</span>
+    <span class="stat-label">done</span>
+  </div>
+  <div class="divider"></div>
+  <div class="stat">
+    <span class="stat-value" id="stat-prog">0</span>
+    <span class="stat-label">in progress</span>
+  </div>
+</div>
+
+<style>
+  .stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--c-text-primary);
+  }
+
+  .stat-value.accent {
+    color: var(--c-accent);
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--c-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .divider {
+    width: 1px;
+    height: 32px;
+    background: var(--c-border);
+  }
+</style>

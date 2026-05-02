@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StatsBar from '../components/StatsBar.astro';
+import ProgressBar from '../components/ProgressBar.astro';
+import AddTaskInput from '../components/AddTaskInput.astro';
+import FilterTabs from '../components/FilterTabs.astro';
+import TaskList from '../components/TaskList.astro';
+---
+
+<BaseLayout title="Taskflow">
+  <div class="page">
+    <div class="container">
+      <header class="site-header">
+        <div class="wordmark">
+          <span class="wordmark-dot"></span>
+          taskflow
+        </div>
+        <p class="site-tagline">Stay on top of it.</p>
+      </header>
+
+      <StatsBar />
+
+      <div class="progress-section">
+        <ProgressBar />
+      </div>
+
+      <AddTaskInput />
+
+      <div class="list-controls">
+        <FilterTabs />
+      </div>
+
+      <TaskList />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    min-height: 100dvh;
+    padding: 48px 16px 80px;
+    background:
+      radial-gradient(ellipse 60% 40% at 80% 10%, rgba(184, 244, 90, 0.04) 0%, transparent 70%),
+      var(--c-bg);
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .site-header {
+    margin-bottom: 8px;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--c-text-primary);
+  }
+
+  .wordmark-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--c-accent);
+    box-shadow: 0 0 16px var(--c-accent-glow);
+    flex-shrink: 0;
+  }
+
+  .site-tagline {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--c-text-muted);
+    margin-top: 6px;
+    margin-left: 20px;
+  }
+
+  .progress-section {
+    padding: 16px 20px;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .list-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>
+
+<script>
+  import { taskController } from '../stores/task-controller';
+  taskController.init();
+</script>

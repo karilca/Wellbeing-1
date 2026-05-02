@@ -1,0 +1,67 @@
+---
+---
+
+<div class="add-task">
+  <input
+    type="text"
+    id="new-task-input"
+    class="add-task-input"
+    placeholder="New task..."
+    autocomplete="off"
+    maxlength="120"
+  />
+  <button class="add-task-btn" id="add-task-btn" aria-label="Add task">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span>Add</span>
+  </button>
+</div>
+
+<style>
+  .add-task {
+    display: flex;
+    gap: 8px;
+  }
+
+  .add-task-input {
+    flex: 1;
+    padding: 11px 14px;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .add-task-input:focus {
+    border-color: var(--c-accent);
+    box-shadow: 0 0 0 3px var(--c-accent-dim);
+  }
+
+  .add-task-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 18px;
+    background: var(--c-accent);
+    color: #0d0d0f;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: opacity var(--transition), transform var(--transition);
+    white-space: nowrap;
+  }
+
+  .add-task-btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+
+  .add-task-btn:active {
+    transform: translateY(0);
+  }
+</style>
